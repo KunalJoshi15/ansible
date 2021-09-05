@@ -1,0 +1,61 @@
+In case of anisble we have a control node and all the nodes where the action needs 
+to be performed.
+ansible is installed at the control node.
+(passwordless authentication is there from control node.)
+
+There is an inventory file in case of ansible where the information is maintained in the inventory file.
+Playbooks are the actual tasks which are done in the end system.
+
+MOst of the useful modules which are required comes to us when we install ansible.
+The network devices(servers) we manage with the ansible.
+inventory is also called as the hosts file.
+
+Modules are the pre defined code that the ansible executes when a playbook needs to be executed in a particular worker node.
+
+Ansible can basically perform the tasks in an RHEL node amazon linux node and the Ubuntu Managed Node.
+Ansible can be only installed in a linux based system but it can manage the windows hosts as well.
+
+Prepare an ansible server:
+1) Setup EC2 instance
+2) Setup hostname.
+3) Create ansadmin user
+4) Add user to sudoers file. (Should have root access)
+5) Generate ssh keys
+6) Enable password based login
+7) Install ansible
+
+In the ansible master we will be generating the public key and the private key and 
+then we will be simply using the private key to make the connection to the other hosts.
+
+The process of setting up the controller nodes is as follows:
+1) Setup EC2 instance.
+2) Setup hostname
+3) Create ansadmin user
+4) Add user to the sudoers file
+5) Enable password based login
+
+In the configuration file there are many default information which is present and are required by us.
+
+in the configuration file of the ansible there are some necessary information are present. The path of the configuration file is stored in it.
+there are few modules 
+
+NOTES in case of the practical implementation we need to expost the port of the docker container to which we want to perform ssh.
+install openssh-client on the master node and ssh in the host node in order to make the connection.
+
+forks in the ansible configuration means the number of systems in which a command can run.
+first with 5 systems then with the next five systems the task needs to be performed.
+
+when we pass the ad_hoc commands in case of the ansible then those commands run simply on command module.
+
+privilege escalation is false. Execute commands from the user with which we are logging in.
+sudo command for becoming the root.
+
+ansible all -m yum -a "name=git" -b
+
+we can even change the default module which is being used.
+(Priorities goes from the top to down.)
+THe particular user needs to be added in the sudoers list in order to perform some operation in particular.
+we can create an ansible configuration and then export it in the environment variables.
+ansible.cfg in the current director.
+in the home directory 
+/etc/ansible/ansible.cfg
