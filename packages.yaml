@@ -1,0 +1,10 @@
+---
+- name: This playbook installs packages
+  hosts: all
+  become: true
+  tasks:
+          - name: install package
+            yum:
+              name: git
+              state: present
+              # in case of the installed state the package is only installed if it is not already present.

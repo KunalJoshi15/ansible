@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+   - name: Creating user John
+     user: name=john
+    # - user:
+    #     name: john
+# this particular playbook is used for creating a user john in remote host.
+# all the atrributes must have a proper indentations 

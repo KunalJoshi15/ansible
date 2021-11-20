@@ -59,3 +59,8 @@ we can create an ansible configuration and then export it in the environment var
 ansible.cfg in the current director.
 in the home directory 
 /etc/ansible/ansible.cfg
+
+ansible all -m yum -a "name=git state=absent" -b
+this command can be used for uninstalling the software from the remote host using ansible.
+
+ansible node1 -m apt -a "upgrade=yes update_cache=yes cache_valid_time=86400" -b
