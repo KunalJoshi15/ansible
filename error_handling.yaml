@@ -13,6 +13,9 @@
       name: httpd
       state: started
     when: ansible_os_family == "RedHat"
+    ignore_errors: yes
+    # we can assume here that there was some error while starting the application but if we still want to proceed with the tasks then we need to use ignore errors.
+
   - name: install apache2
     apt:
       name: apache2

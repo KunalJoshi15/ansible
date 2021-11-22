@@ -64,3 +64,8 @@ ansible all -m yum -a "name=git state=absent" -b
 this command can be used for uninstalling the software from the remote host using ansible.
 
 ansible node1 -m apt -a "upgrade=yes update_cache=yes cache_valid_time=86400" -b
+
+Ansible vault is used in order to encrypt the file system that we currently have,
+ansible-vault create -> These are encyrpted with password
+view is used for viewing the file
+ansible-vault

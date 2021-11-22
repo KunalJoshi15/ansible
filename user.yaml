@@ -1,0 +1,2 @@
+user: tom
+# ansible-playbook -i hosts create_user.yml -e "user=sonia" this way we can pass extra vars as per our requirement.
